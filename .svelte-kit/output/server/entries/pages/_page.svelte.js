@@ -42,15 +42,16 @@ function ParticleField($$renderer, $$props) {
   });
 }
 function Hero($$renderer) {
+  const email = "georginaodusanya@gmail.com";
   $$renderer.push(`<section class="hero svelte-1q37ri0" id="top" aria-labelledby="hero-title">`);
   ParticleField($$renderer);
-  $$renderer.push(`<!----> <div class="hero__content svelte-1q37ri0"><p class="eyebrow svelte-1q37ri0">Svelte engineer / interaction designer</p> <h1 id="hero-title" class="svelte-1q37ri0">Ava Morgan builds interfaces that feel alive.</h1> <p class="intro svelte-1q37ri0">I design and engineer fast, accessible product experiences with cinematic motion, clean systems,
-      and a bias for interfaces people remember.</p> <div class="actions svelte-1q37ri0" aria-label="Primary actions"><a class="button button--primary svelte-1q37ri0" href="#projects">Explore work</a> <a class="button svelte-1q37ri0" href="/resume-ava-morgan.pdf" download="">Resume</a> <a class="button button--ghost svelte-1q37ri0" href="mailto:ava@example.com">ava@example.com</a></div></div> <div class="status-panel svelte-1q37ri0" aria-label="Portfolio status"><span class="svelte-1q37ri0">Build</span> <strong class="svelte-1q37ri0">SvelteKit static</strong> <span class="svelte-1q37ri0">Motion</span> <strong class="svelte-1q37ri0">60fps budget</strong> <span class="svelte-1q37ri0">Mode</span> <strong class="svelte-1q37ri0">Command-ready</strong></div></section>`);
+  $$renderer.push(`<!----> <div class="hero__content svelte-1q37ri0"><p class="eyebrow svelte-1q37ri0">Frontend engineer / interaction designer</p> <h1 id="hero-title" class="svelte-1q37ri0">Georgina odusanya builds interfaces that feel alive.</h1> <p class="intro svelte-1q37ri0">I design and engineer fast, accessible product experiences with cinematic motion, clean systems,
+      and a bias for interfaces people remember.</p> <div class="actions svelte-1q37ri0" aria-label="Primary actions"><a class="button button--primary svelte-1q37ri0" href="#projects">Explore work</a> <a class="button svelte-1q37ri0" href="/Omolola_Odusanya_Resume.pdf" download="">Resume</a> <a class="button button--ghost svelte-1q37ri0"${attr("href", `mailto:${email}`)}>georginaodusanya@gmail.com</a></div></div> <div class="status-panel svelte-1q37ri0" aria-label="Portfolio status"><span class="svelte-1q37ri0">Build</span> <strong class="svelte-1q37ri0">SvelteKit static</strong> <span class="svelte-1q37ri0">Motion</span> <strong class="svelte-1q37ri0">60fps budget</strong> <span class="svelte-1q37ri0">Mode</span> <strong class="svelte-1q37ri0">Command-ready</strong></div></section>`);
 }
 function ProjectShowcase($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let selected = "All";
-    const filters = ["All", "Experience", "Systems", "AI"];
+    const filters = ["All", "Experience", "Systems", "Architecture"];
     const filtered = derived(
       () => projects
     );
@@ -64,7 +65,14 @@ function ProjectShowcase($$renderer, $$props) {
     const each_array_1 = ensure_array_like(filtered());
     for (let index = 0, $$length = each_array_1.length; index < $$length; index++) {
       let project = each_array_1[index];
-      $$renderer2.push(`<article class="project-card svelte-x2d45w"${attr_style(`--project-accent: ${project.accent}; --delay: ${index * 90}ms`)}><a${attr("href", `/projects/${project.slug}`)}${attr("aria-label", `Open ${project.title} case study`)} class="svelte-x2d45w"><div class="project-media svelte-x2d45w" role="img"${attr("aria-label", project.imageAlt)}><span class="svelte-x2d45w">${escape_html(project.category)}</span></div> <div class="project-body svelte-x2d45w"><h3 class="svelte-x2d45w">${escape_html(project.title)}</h3> <p class="svelte-x2d45w">${escape_html(project.description)}</p> <ul${attr("aria-label", `${project.title} technologies`)} class="svelte-x2d45w"><!--[-->`);
+      $$renderer2.push(`<article class="project-card svelte-x2d45w"${attr_style(`--project-accent: ${project.accent}; --delay: ${index * 90}ms`)}><a${attr("href", `/projects/${project.slug}`)}${attr("aria-label", `Open ${project.title} case study`)} class="svelte-x2d45w"><div class="project-media svelte-x2d45w" role="img"${attr("aria-label", project.imageAlt)}>`);
+      if (project.imageSrc) {
+        $$renderer2.push("<!--[0-->");
+        $$renderer2.push(`<img${attr("src", project.imageSrc)}${attr("alt", project.imageAlt)} class="svelte-x2d45w"/>`);
+      } else {
+        $$renderer2.push("<!--[-1-->");
+      }
+      $$renderer2.push(`<!--]--> <span class="svelte-x2d45w">${escape_html(project.category)}</span></div> <div class="project-body svelte-x2d45w"><h3 class="svelte-x2d45w">${escape_html(project.title)}</h3> <p class="svelte-x2d45w">${escape_html(project.description)}</p> <ul${attr("aria-label", `${project.title} technologies`)} class="svelte-x2d45w"><!--[-->`);
       const each_array_2 = ensure_array_like(project.stack);
       for (let $$index_1 = 0, $$length2 = each_array_2.length; $$index_1 < $$length2; $$index_1++) {
         let tech = each_array_2[$$index_1];

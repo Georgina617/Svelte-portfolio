@@ -1,53 +1,61 @@
 const projects = [
   {
-    slug: "signal-lab",
-    title: "Signal Lab",
+    slug: "Invoice",
+    title: "Invoice-management system",
     category: "Experience",
-    description: "A real-time analytics cockpit for product teams tracking launch signals.",
-    longDescription: "Signal Lab turns scattered event streams into a cinematic operating surface with live status lanes, anomaly callouts, and keyboard-first triage.",
-    stack: ["SvelteKit", "Web Workers", "Canvas", "Edge cache"],
+    description: "A real-time invoice management system with dynamic dashboards and collaborative features.",
+    longDescription: "Invoice is a comprehensive solution for businesses to create, manage, and track invoices with real-time updates, customizable dashboards, and seamless collaboration tools.",
+    stack: ["React", "Javascript", "local storage", "Tailwind CSS"],
     accent: "#73f7b2",
     metrics: ["42% faster triage", "96 Lighthouse perf", "18kb route payload"],
-    liveUrl: "https://example.com/signal-lab",
-    githubUrl: "https://github.com/example/signal-lab",
-    imageAlt: "Abstract analytics interface with glowing status lanes"
+    liveUrl: "https://invoice-management-app-3517.vercel.app/",
+    githubUrl: "https://github.com/Georgina617/Invoice-Management-App.git",
+    imageAlt: "Invoice management dashboard with charts and invoice list",
+    imageSrc: "/projects/invoice.png"
   },
   {
-    slug: "orbit-docs",
-    title: "Orbit Docs",
+    slug: "E2E Messaging App",
+    title: "E2E Messaging App",
     category: "Systems",
-    description: "A spatial documentation system with graph navigation and instant search.",
-    longDescription: "Orbit Docs combines a local-first content graph, progressive enhancement, and a motion language that makes deep technical systems feel explorable.",
-    stack: ["Svelte", "IndexedDB", "Search index", "View transitions"],
+    description: "A secure messaging app with end-to-end encryption and decrypted messages.",
+    longDescription: "E2E Messaging App is a secure communication platform that ensures privacy with end-to-end encryption, allowing users to send and receive messages that are decrypted only on their devices.",
+    stack: ["Next.js", "IndexedDB", "Web Workers", "Web Crypto API"],
     accent: "#8fb7ff",
     metrics: ["Sub-50ms search", "Offline-ready", "AA contrast"],
-    liveUrl: "https://example.com/orbit-docs",
-    githubUrl: "https://github.com/example/orbit-docs",
-    imageAlt: "Network graph documentation interface with connected nodes"
+    liveUrl: "https://e2-e-messaging-app.vercel.app/",
+    githubUrl: "https://github.com/Georgina617/E2E-messaging-App.git",
+    imageAlt: "Secure messaging interface with end-to-end encryption indicators",
+    imageSrc: "/projects/e2e-messaging.png"
   },
   {
-    slug: "forge-ai",
-    title: "Forge AI",
-    category: "AI",
-    description: "A prompt engineering workbench with eval snapshots and review trails.",
-    longDescription: "Forge AI gives teams a disciplined way to compare prompts, replay model responses, and ship changes with confidence instead of vibes.",
-    stack: ["SvelteKit", "Streaming UI", "Server actions", "Zod"],
+    slug: "Habit Tracker",
+    title: "Habit Tracker",
+    category: "Architecture",
+    description: "A habit tracking app with a modular architecture and real-time progress visualization.",
+    longDescription: "Habit Tracker is designed to help users build and maintain habits through a modular architecture that supports real-time progress visualization, customizable habit templates, and insightful analytics.",
+    stack: ["Next.js", "IndexedDB", "Service Workers", "Typescript"],
     accent: "#ffcb77",
-    metrics: ["2.3s first token", "Typed eval schema", "No exposed secrets"],
-    liveUrl: "https://example.com/forge-ai",
-    githubUrl: "https://github.com/example/forge-ai",
-    imageAlt: "AI workbench with split panels and evaluation traces"
+    metrics: [
+      "Modular architecture",
+      "Real-time updates",
+      "Customizable templates"
+    ],
+    liveUrl: "https://habit-tracker-pwa-mauve.vercel.app/",
+    githubUrl: "https://github.com/Georgina617/Habit-tracker-pwa.git",
+    imageAlt: "Habit tracking interface with progress visualization",
+    imageSrc: "/projects/habit-tracker.png"
   }
 ];
 const skills = [
-  "Svelte 5 runes",
-  "SvelteKit routing",
-  "Accessible motion",
-  "Performance budgets",
-  "Canvas systems",
-  "Design systems",
-  "SSR and static builds",
-  "Progressive enhancement"
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Svelte",
+  "Tailwind CSS",
+  "IndexedDB",
+  "Web Workers",
+  "Web Crypto API"
 ];
 export {
   projects as p,
