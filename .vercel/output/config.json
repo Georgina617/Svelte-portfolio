@@ -1,0 +1,83 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": ".*",
+			"continue": true,
+			"transforms": [
+				{
+					"type": "request.query",
+					"op": "delete",
+					"target": {
+						"key": "__pathname"
+					}
+				}
+			]
+		},
+		{
+			"src": "/projects/Invoice",
+			"dest": "/projects/Invoice/"
+		},
+		{
+			"src": "/projects/Invoice/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/Invoice"
+			}
+		},
+		{
+			"src": "/projects/E2E Messaging App",
+			"dest": "/projects/E2E Messaging App/"
+		},
+		{
+			"src": "/projects/E2E Messaging App/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/E2E Messaging App"
+			}
+		},
+		{
+			"src": "/projects/Habit Tracker",
+			"dest": "/projects/Habit Tracker/"
+		},
+		{
+			"src": "/projects/Habit Tracker/",
+			"status": 308,
+			"headers": {
+				"Location": "/projects/Habit Tracker"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"status": 404,
+			"continue": false
+		},
+		{
+			"src": "/.*",
+			"dest": "/![-]/catchall"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"projects/Invoice.html": {
+			"path": "projects/Invoice"
+		},
+		"projects/E2E Messaging App.html": {
+			"path": "projects/E2E Messaging App"
+		},
+		"projects/Habit Tracker.html": {
+			"path": "projects/Habit Tracker"
+		}
+	}
+}
